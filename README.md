@@ -1,6 +1,6 @@
 # Curso de Angular DevTalles
 
-## Introduccion
+## Introducción
 
 [Instalaciones recomendadas](https://gist.github.com/Klerith/4816679624c1cb528f8e05d902fd7cff)
 
@@ -8,9 +8,9 @@
 
 [Cheat-sheet nuevo](/cheat-sheets/angular-cheat-sheet-v2.pdf)
 
-[Documentacion oficial de angular antigua](https://v17.angular.io/cli)
+[Documentación oficial de angular antigua](https://v17.angular.io/cli)
 
-[Documentacion oficial de angular actual](https://angular.dev/tools/cli)
+[Documentación oficial de angular actual](https://angular.dev/tools/cli)
 
 Para ver si se instalo correctamente
 
@@ -20,25 +20,25 @@ ng version
 
 ## Conceptos generales
 
-### Introduccion
+### Introducción
 
 ¿Por que angular?
 
-Angular JS hace referencia al angular 1, que ya no se usa, pero cuando paso de angular 1 a 2 cambio muchisimo y ahora se llama angular
+Angular JS hace referencia al angular 1, que ya no se usa, pero cuando paso de angular 1 a 2 cambio muchísimo y ahora se llama angular
 
-Tiene una curva de aprendizaje que empieza con la curva y despues se calma
+Tiene una curva de aprendizaje que empieza con la curva y después se calma
 
 ### ¿Qué es TypeScript? y ¿Por qué Angular usa TypeScript?
 
-JavaScript pero con caracteristicas extendidas, mejorado
+JavaScript pero con características extendidas, mejorado
 si sabes JavaScript, conoces el 80% de TypeScript
 
 TypeScript
 
 - Es un super set de JavaScript
 - Ofrece tipado estricto y flexible
-- Mejora enormemente la legibilidad del codigo
-- Nos permite usar caracteristicas modernas
+- Mejora enormemente la legibilidad del código
+- Nos permite usar características modernas
 
 ¿Por que angular usa TS?
 
@@ -53,7 +53,7 @@ TypeScript
 Hice un curso de typescript del mismo profesor donde se explica los mismos temas y mas
 por eso lo salteo
 
-[Codigo de la seccion](introduccion-typescript-main)
+[Código de la seccion](introduccion-typescript-main)
 
 ## Angular
 
@@ -124,7 +124,122 @@ Crear un componente:
   - Creamos una carpeta con el nombre del componente.
   - Click derecho un archivo nombre.component.ts
   - creamos una clase una clase que exportamos y arriba le colocamos el decorador @Component, importado de angular core,
-  - Dentro del @Component tenemos el selector que es como queremos que se llame el componente en el html, tenemos el templateUrl: es basicamente lo que usamos para mostrar
+  - Dentro del @Component tenemos el selector que es como queremos que se llame el componente en el html, tenemos el templateUrl: es básicamente lo que usamos para mostrar
   - Y para mostrarlo al componente en otro html hay que ir al app.module y en la declarations lo importamos con el nombre que le colocamos a la clase
 - De forma con la extension:
   - Escribimos 'a-component' y nos crea el esqueleto del component
+- De forma con la consola:
+  - En la consola Colocamos 'ng g c path/nombreComponente'
+  - Esto nos generara el componente con el html, el ts, el css y el spec.ts y actualiza el app.module.ts
+
+En caso de crear un componente que no debe ir ahi en ubicacion, una es arrastrar la carpeta podria solucionar el problema y del app.modulo debo boorrarlo y reimportarlo.
+
+### Componente Hero y directorios
+
+### Interpolación, estructura HTML y estilos
+
+Angular Docs - [Interpolación de expresiones](https://v16.angular.io/guide/interpolation)
+
+### One way data binding - enlazado en una sola vía
+
+### Directiva \*ngIf
+
+\*ngIf="expresión"
+a-if - para acceder al snippet
+
+### Directiva \*ngFor
+
+\*ngFor="let item of list"
+
+### Ng-template y el ngIf-else
+
+### Módulos en Angular
+
+a-module : snippet para modulo
+
+## Expandir Bases de Angular
+
+### Que veremos en esta seccion
+
+- Profundizar un poco más en los módulos
+
+- FormsModule
+
+- ngModel
+
+- @Inputs
+
+- @outputs
+
+- Servicios
+
+- Métodos en servicios
+
+- Depuraciones
+
+### Modulo DBZ
+
+para generar un modulo usamos 'ng g m nombreModulo' y nos creara una carpeta con el modulo adentro
+
+- pages: es un componente que vamos a usarlo como router para nuestra app
+
+Creamos el modulo, le creamos las carpetas correspondientes, en la carpeta pages, creamos el main page component ts y le deifnimos el html lo exportamos y en el app.module.ts anotamos el nombre del modulo creado anteriormente
+
+### @Input() - Recibir del padre
+
+Define una propiedad que puede ser enviada desde el padre hacia el componente hijo.
+
+### ngClass - Clases basado en condiciones
+
+[ngClass]="{'clase': condicion, 'clase2':condicion }"
+
+### FormsModule y ngModel
+
+en el module tengo que importar el FormsModule
+
+llaves cuadradas [] son atributos
+parentes () escuchar eventos
+
+### Formas de depurar la app
+
+escribir 'debugger' en la parte de codigo que quiero que se pare javascript
+
+### Servicios
+
+el servicio tiene que tener la logica de negocio
+
+### Servicio Privado
+
+### Paquetes externos - UUID
+
+npm i uuid
+
+nos genera identificadores unicos
+
+## Despliegues a produccion
+
+### Generar build de produccion
+
+es tener la aplicacion lista para subir a produccion
+
+build de produccion: es la aplicacion minimizada, optimizada para la web
+
+comando para build 'ng build' nos genera la carpeta dist
+
+### HttpServer Local y Netlify
+
+[http-server](https://www.npmjs.com/package/http-server)
+
+sirve para montar un servidor rapido, para pruebas, no desplegar en produccioon
+
+una vez instalado nos movemos a la carpeta y colocamos 'http-server -o'
+
+## Aplicacion realizada en anteriores secciones
+
+[aplicacion desarrollada](https://illustrious-alfajores-25dcfe.netlify.app/)
+
+## Package.json Scripts
+
+https://www.npmjs.com/package/copyfiles
+
+https://www.npmjs.com/package/del-cli
