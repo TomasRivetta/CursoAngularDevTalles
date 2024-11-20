@@ -243,3 +243,24 @@ una vez instalado nos movemos a la carpeta y colocamos 'http-server -o'
 https://www.npmjs.com/package/copyfiles
 
 https://www.npmjs.com/package/del-cli
+
+## Gifs App
+
+Comando para crear proyecto de forma tradicional
+ng new nombreProyecto --no-standalone
+
+modificamos el index agregando el cdn para bootstrap y boramos lo de neustro app.component.html
+
+carpeta shared : va los nav bar, footer, lo que van a tener en comun las paginas
+
+Para crear un modulo:
+ng g m nombreModulo
+
+y tengo que importar los modulos en nuestro app.module.ts en los imports
+
+cuando creamos un componente tenemos que agregar al exports de nuestro modulo en caso de que lo queramos usar afuera y en la declarations.
+EN CASO DE QUE QUERAMOS CREAR UN COMPONENTE PARA UN COMPONENTE PADRE ES SOLO ESPECIFICARLO EN EL MODULO DE ESE DIRECTORIO EN EL DECLARATIONS
+
+### @ViewChild - Referencia al HTML
+
+### Gifs Service
